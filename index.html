@@ -770,6 +770,22 @@
     .sobre-card:nth-child(2),
     .sobre-card:nth-child(4) { margin-top: 0; }
   }
+
+  @media (max-width: 600px) {
+    .sticker { display: none; }
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+    }
+    .btn-primary { width: 100%; text-align: center; }
+    .btn-ghost { justify-content: center; }
+    .servicos-grid { grid-template-columns: 1fr !important; max-width: 100% !important; }
+    .cta-buttons { flex-direction: column; align-items: center; gap: 12px; }
+    .btn-whatsapp, .btn-insta, .btn-email { width: 100%; justify-content: center; box-sizing: border-box; }
+    footer .footer-links { flex-wrap: wrap; gap: 16px; }
+  }
 </style>
 </head>
 <body>
