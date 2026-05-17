@@ -95,7 +95,7 @@
     min-height: 100vh;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     text-align: center;
-    padding: 120px 5% 80px;
+    padding: 160px 5% 80px;
     overflow: hidden;
     background: var(--white);
   }
@@ -313,6 +313,7 @@
   }
   .sobre-card:nth-child(2) { margin-top: 32px; }
   .sobre-card:nth-child(4) { margin-top: 32px; }
+  .sobre-card:nth-child(6) { margin-top: 32px; }
 
   .card-icon {
     font-size: 1.8rem;
@@ -786,6 +787,28 @@
     .btn-whatsapp, .btn-insta, .btn-email { width: 100%; justify-content: center; box-sizing: border-box; }
     footer .footer-links { flex-wrap: wrap; gap: 16px; }
   }
+
+  .whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  background-color: #25D366;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
 </style>
 </head>
 <body>
@@ -801,6 +824,12 @@
   </ul>
 </nav>
 
+<!-- PROMO BANNER -->
+<div id="promo-banner" style="background: linear-gradient(90deg, var(--pink-deep), #c45070); color: #fff; text-align: center; padding: 12px 20px; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.5px; position: fixed; top: 62px; left: 0; right: 0; z-index: 98;">
+  🎉 <strong>OFERTA DE MAIO:</strong> Feche seu site até 31/05 e ganhe <strong>25% de desconto</strong> no valor do projeto! &nbsp;
+  <a href="#contato" style="color:#fff; text-decoration: underline; font-weight:700;">Quero aproveitar →</a>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="grid-bg"></div>
@@ -813,11 +842,11 @@
   <div class="hero-badge">✦ Criação de Sites Profissionais</div>
   <h1>
     Seu site<br>
-    <em>mais bonito</em> e<br>
+    <em>elegante</em> e<br>
     <span class="highlight">estratégico</span>
   </h1>
   <p class="hero-sub">
-    Sites elegantes, femininos e que convertem. Transformo a sua marca em uma presença digital que as pessoas não conseguem esquecer.
+    Sites elegantes, criativos e que convertem. Transformo a sua marca em uma presença digital que as pessoas não conseguem esquecer.
   </p>
   <div class="hero-actions">
     <a href="#contato" class="btn-primary">Quero meu site →</a>
@@ -829,13 +858,13 @@
 <div class="marquee-wrap">
   <div class="marquee-track">
     <span>Sites que vendem</span><span class="dot">✦</span>
-    <span>Design feminino</span><span class="dot">✦</span>
+    <span>Design autoral</span><span class="dot">✦</span>
     <span>Identidade única</span><span class="dot">✦</span>
     <span>Camis Design</span><span class="dot">✦</span>
     <span>Sites que encantam</span><span class="dot">✦</span>
     <span>Presença digital</span><span class="dot">✦</span>
     <span>Sites que vendem</span><span class="dot">✦</span>
-    <span>Design feminino</span><span class="dot">✦</span>
+    <span>Design autoral</span><span class="dot">✦</span>
     <span>Identidade única</span><span class="dot">✦</span>
     <span>Camis Design</span><span class="dot">✦</span>
     <span>Sites que encantam</span><span class="dot">✦</span>
@@ -865,7 +894,12 @@
     <div class="sobre-card">
       <div class="card-icon">📱</div>
       <div class="card-title">100% responsivo</div>
-      <div class="card-desc">Perfeito em celular, tablet e desktop.</div>
+      <div class="card-desc">Entregue nas 3 versões: mobile, tablet e desktop.</div>
+    </div>
+    <div class="sobre-card">
+      <div class="card-icon">💳</div>
+      <div class="card-title">Sem mensalidade</div>
+      <div class="card-desc">Pagou uma vez, o site é seu. Sem cobranças recorrentes.</div>
     </div>
     <div class="sobre-card">
       <div class="card-icon">⚡</div>
@@ -876,6 +910,12 @@
       <div class="card-icon">🌸</div>
       <div class="card-title">Suporte dedicado</div>
       <div class="card-desc">Acompanho você durante e após o projeto.</div>
+    </div>
+    <div class="sobre-card" style="position:relative; overflow:hidden; border-color: var(--pink-deep);">
+      <div style="position:absolute; top:14px; right:-22px; background: var(--pink-deep); color:#fff; font-size:0.7rem; font-weight:700; padding:5px 32px; transform:rotate(35deg); letter-spacing:1px;">25% OFF</div>
+      <div class="card-icon">💰</div>
+      <div class="card-title">A partir de R$&nbsp;300</div>
+      <div class="card-desc">Investimento de R$&nbsp;300 a R$&nbsp;1.000 dependendo do projeto. Feche em maio e ganhe 25% de desconto!</div>
     </div>
   </div>
 </section>
@@ -902,15 +942,21 @@
     </div>
     <div class="servico-card reveal">
       <div class="servico-num">03</div>
-      <div class="servico-name">E-commerce</div>
-      <p class="servico-desc">Loja virtual completa e profissional para você vender online 24h por dia. Design atraente, carrinho de compras e experiência de compra fluída.</p>
-      <span class="servico-tag">✦ Venda online</span>
+      <div class="servico-name">Site para Bio do Insta</div>
+      <p class="servico-desc">Uma página linda e estratégica para o link da sua bio no Instagram. Centralize seus links, serviços e contato em um só lugar com muito estilo.</p>
+      <span class="servico-tag">✦ Para creators</span>
     </div>
     <div class="servico-card reveal">
       <div class="servico-num">04</div>
-      <div class="servico-name">Redesign de Site</div>
-      <p class="servico-desc">Seu site já existe mas não reflete mais quem você é? Redesenhamos do zero para alinhar com a sua marca atual.</p>
-      <span class="servico-tag">✦ Renovação</span>
+      <div class="servico-name">Convites Digitais</div>
+      <p class="servico-desc">Convites animados e personalizados para casamentos e aniversários. Elegantes, fáceis de compartilhar e muito mais especiais que os tradicionais.</p>
+      <span class="servico-tag">✦ Casamento &amp; Aniversário</span>
+    </div>
+    <div class="servico-card reveal" style="grid-column: 1 / -1; max-width: 430px; margin: 0 auto;">
+      <div class="servico-num">05</div>
+      <div class="servico-name">Cardápio Digital</div>
+      <p class="servico-desc">Cardápio online moderno e atraente para restaurantes, cafés e lanchonetes. Fácil de atualizar, sem custos de impressão e com visual profissional.</p>
+      <span class="servico-tag">✦ Para negócios locais</span>
     </div>
   </div>
 </section>
@@ -945,36 +991,7 @@
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
-<section class="depoimentos" id="depoimentos">
-  <div class="section-header reveal">
-    <span class="label" style="color: var(--dark);">✦ O que dizem</span>
-    <h2>Clientes que <em>amaram</em></h2>
-  </div>
-  <div class="dep-grid">
-    <div class="dep-card reveal">
-      <div class="dep-quote">"</div>
-      <div class="dep-stars">★★★★★</div>
-      <p class="dep-text">A Camis Design entregou muito além do que eu esperava. Meu site ficou lindo e já trouxe novos clientes na primeira semana!</p>
-      <div class="dep-author">Ana Paula</div>
-      <div class="dep-role">Coach de carreira</div>
-    </div>
-    <div class="dep-card reveal">
-      <div class="dep-quote">"</div>
-      <div class="dep-stars">★★★★★</div>
-      <p class="dep-text">Profissionalismo impecável! Ela entendeu minha marca perfeitamente e transformou tudo em um site incrível e funcional.</p>
-      <div class="dep-author">Mariana Lima</div>
-      <div class="dep-role">Nutricionista</div>
-    </div>
-    <div class="dep-card reveal">
-      <div class="dep-quote">"</div>
-      <div class="dep-stars">★★★★★</div>
-      <p class="dep-text">O processo foi super tranquilo e o resultado superou minhas expectativas. Meu negócio ganhou uma cara completamente nova!</p>
-      <div class="dep-author">Camila Santos</div>
-      <div class="dep-role">Fotógrafa</div>
-    </div>
-  </div>
-</section>
+
 
 <!-- FAQ -->
 <section style="padding: 80px 5%; background: var(--white);">
@@ -993,7 +1010,7 @@
     </div>
     <div class="faq-item reveal">
       <div class="faq-q">Qual o investimento para criar meu site? <span class="arrow">↓</span></div>
-      <div class="faq-a">O custo do site varia de R$ 500 a R$ 1.000, dependendo do tipo de projeto e das funcionalidades necessárias. Entre em contato para receber um orçamento personalizado!</div>
+      <div class="faq-a">O custo do site varia de R$ 300 a R$ 1.000, dependendo do tipo de projeto e das funcionalidades necessárias. Entre em contato para receber um orçamento personalizado!</div>
     </div>
     <div class="faq-item reveal">
       <div class="faq-q">Posso fazer ajustes após a entrega? <span class="arrow">↓</span></div>
@@ -1043,11 +1060,9 @@
   <p style="margin-bottom:8px;">
     <a href="mailto:camissdesign@gmail.com" style="color:var(--pink-deep);text-decoration:none;">camissdesign@gmail.com</a>
     &nbsp;·&nbsp;
-    <a href="https://wa.me/5511940888489" style="color:var(--pink-deep);text-decoration:none;">(11) 94088-8489</a>
-    &nbsp;·&nbsp;
     <a href="https://www.instagram.com/cam.isdesign?igsh=MTM4amh0Ynptbjd5aA%3D%3D&utm_source=qr" style="color:var(--pink-deep);text-decoration:none;">@cam.isdesign</a>
   </p>
-  <p>© 2025 Camis Design · Feito com 🌸 · Todos os direitos reservados</p>
+  <p>© 2026 Camis Design · Feito com 🌸 · Todos os direitos reservados</p>
 </footer>
 
 <script>
@@ -1073,5 +1088,12 @@
     });
   });
 </script>
+<!-- Botão WhatsApp Fixo -->
+<a href="https://wa.me/5511940888489" target="_blank" class="whatsapp-float" aria-label="Falar no WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.122 1.528 5.856L.057 23.882l6.2-1.625A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.372l-.36-.214-3.68.965.981-3.595-.235-.369A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+  </svg>
+</a>
 </body>
 </html>
